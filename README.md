@@ -27,16 +27,16 @@ This project is a web application that detects and classifies objects in images 
 ```bash
 aws-image-recognition-app/
 │
-├── public/ # Static assets (uploads, CSS, JS)
-│ └── uploads/ # Uploaded image files
+├── public/ 
+│ └── uploads/
 │
-├── views/ # EJS templates
+├── views/
 │ └── index.ejs
 │
-├── .env # Environment variables (not committed)
+├── .env 
 ├── .gitignore
 ├── package.json
-├── app.js # Main server file
+├── app.js 
 ```
 ---
 
@@ -70,6 +70,10 @@ node app.js
 ```
 Visit http://localhost:3000 in your browser.
 
+---
+### Live Demo
+![alt text](image.png)
+![alt text](image-1.png)
 ---
 
 🧠 Use Cases
