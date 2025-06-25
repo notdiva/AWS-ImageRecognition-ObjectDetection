@@ -76,18 +76,20 @@ Visit http://localhost:3000 in your browser.
 ![alt text](image-1.png)
 ---
 
-### 🧠 Use Cases
-Surveillance and Security Systems
+### 🧠Use Cases
 
-Smart Retail Monitoring
+- **Surveillance and Security Systems**
 
-Safety & Compliance Detection
+- **Smart Retail Monitoring**
 
-AI-Powered Photo Tagging
+- **Safety & Compliance Detection**
+
+- **AI-Powered Photo Tagging**
 
 ---
 
-###📜 License
+### 📜License
+
 ```bash
 This project is licensed under the MIT License.
 ```
