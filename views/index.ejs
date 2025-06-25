@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Image Recognition App</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #e3f2fd, #fff);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      background: #ffffff;
+      padding: 2.5rem 3rem;
+      border-radius: 20px;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+      width: 95%;
+      max-width: 550px;
+      text-align: center;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: #2c3e50;
+      margin-bottom: 1.8rem;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.7rem;
+      color: #34495e;
+      text-align: left;
+    }
+
+    input[type="file"] {
+      display: block;
+      width: 100%;
+      padding: 0.6rem;
+      border: 2px dashed #b0bec5;
+      border-radius: 10px;
+      background-color: #fafafa;
+      transition: border 0.3s ease;
+    }
+
+    input[type="file"]:hover {
+      border-color: #64b5f6;
+    }
+
+    button {
+      margin-top: 1.5rem;
+      background-color: #2196f3;
+      color: white;
+      border: none;
+      padding: 0.8rem 1.6rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #1976d2;
+    }
+
+    .error {
+      color: #e74c3c;
+      font-weight: 600;
+      margin-top: 1.2rem;
+    }
+
+    .results {
+      margin-top: 2.5rem;
+      text-align: left;
+    }
+
+    .results h2 {
+      font-size: 1.25rem;
+      color: #2c3e50;
+      margin-bottom: 0.7rem;
+    }
+
+    .results ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .results li {
+      background: #ecf0f1;
+      padding: 0.6rem 1rem;
+      margin-bottom: 0.4rem;
+      border-radius: 8px;
+      color: #2d3436;
+      font-size: 0.95rem;
+    }
+
+    img {
+      margin-top: 1rem;
+      border-radius: 12px;
+      max-width: 100%;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Upload an Image File</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+      <label for="image">Choose Image:</label>
+      <input type="file" name="image" id="image" accept="image/*" />
+      <button type="submit">Upload</button>
+    </form>
+
+    <% if (error) { %>
+      <p class="error"><%= error %></p>
+    <% } %>
+
+    <% if (imageUrl) { %>
+      <div>
+        <h2 style="margin-top: 1.8rem;">Uploaded Image:</h2>
+        <img src="<%= imageUrl %>" alt="Uploaded Image" />
+      </div>
+    <% } %>
+
+    <div class="results">
+      <% if (labels && labels.length > 0) { %>
+        <h2>Detected Labels in Image:</h2>
+        <ul>
+          <% labels.forEach(label => { %>
+            <li><%= label.Name %> (Confidence: <%= label.Confidence.toFixed(2) %>%)</li>
+          <% }) %>
+        </ul>
+      <% } %>
+    </div>
+  </div>
+</body>
+</html>
