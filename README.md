@@ -1,4 +1,4 @@
-# 🔍 AWS Rekognition Image Recognition App
+# 🔍 AWS Rekognition Object Detection App
 
 This project is a web application that detects and classifies objects in images using **Amazon Rekognition**. Users can upload an image, and the app will analyze its content in real-time using AWS Rekognition's powerful deep learning models.
 
