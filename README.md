@@ -76,7 +76,7 @@ Visit http://localhost:3000 in your browser.
 ![alt text](image-1.png)
 ---
 
-🧠 Use Cases
+### 🧠 Use Cases
 Surveillance and Security Systems
 
 Smart Retail Monitoring
@@ -87,7 +87,8 @@ AI-Powered Photo Tagging
 
 ---
 
-📜 License
+###📜 License
+```bash
 This project is licensed under the MIT License.
-
+```
 ---
